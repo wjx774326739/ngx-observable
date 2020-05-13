@@ -1,5 +1,6 @@
 # 说明
 - 记录angular自带的一些可观察对象，以及是否需要取消订阅；
+- DEMO:https://wjx774326739.github.io/ngx-observable/
 
 ## http请求
 - http每次请求成功或者失败之后，会自动取消订阅，不会有潜在的内存泄漏风险；
