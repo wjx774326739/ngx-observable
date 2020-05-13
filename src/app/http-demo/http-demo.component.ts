@@ -38,6 +38,7 @@ export class HttpDemoComponent implements OnInit, OnDestroy {
       '这是在HttpDemoComponent中，组件销毁时记录的日志。此时http请求失败观察者对象的状态为：closed-'
       + this.httpError$Index.closed
     );
+    this.logSer.publishLog('------------------------------------------------------------');
   }
 
   errorReq(): void {
