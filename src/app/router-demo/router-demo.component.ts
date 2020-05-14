@@ -27,7 +27,9 @@ export class RouterDemoComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private logSer: LogService,
     private router: Router,
-  ) { }
+  ) {
+    this.logSer.startLog();
+  }
 
   ngOnInit() {
     this.data$Index = this.activatedRoute.data.subscribe(data => { });
@@ -53,7 +55,7 @@ export class RouterDemoComponent implements OnInit, OnDestroy {
       '这是在RouterDemoComponent中，组件销毁时记录的日志。此时queryParamMap的观察者对象的状态为：closed-'
       + this.queryParamMap$Index.closed
     );
-    this.logSer.publishLog('------------------------------------------------------------');
+    this.logSer.endLog();
   }
 
 }

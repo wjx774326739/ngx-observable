@@ -14,8 +14,16 @@ export class LogService {
 
   constructor() { }
 
+  endLog(): void {
+    this.publishLog('------------------------------------');
+  }
+
   publishLog(log: string): void {
     this.log$.next(log);
+  }
+
+  startLog(): void {
+    this.publishLog('+++++++++++++++++++++++++++++++++++++');
   }
 
   subscribeLog(): Observable<string> {

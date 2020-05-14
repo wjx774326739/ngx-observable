@@ -26,7 +26,9 @@ export class FormDemoComponent implements OnInit, OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private logSer: LogService,
-  ) { }
+  ) {
+    this.logSer.startLog();
+  }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -48,7 +50,7 @@ export class FormDemoComponent implements OnInit, OnDestroy {
       '这是在FormDemoComponent中，组件销毁时记录的日志。此时表单值改变的观察者对象的状态为：closed-'
       + this.formValue$Index.closed
     );
-    this.logSer.publishLog('------------------------------------------------------------');
+    this.logSer.endLog();
   }
 
 }
