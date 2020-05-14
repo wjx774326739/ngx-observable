@@ -25,6 +25,10 @@ export class AppComponent {
     {
       name: '路由',
       url: '/router'
+    },
+    {
+      name: 'viewchildren',
+      url: '/viewchildren'
     }
   ];
 

@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: () => import('./router-demo/router-demo.module').then(m => m.RouterDemoModule)
   },
   {
+    path: 'viewchildren',
+    loadChildren: () => import('./viewchildren/viewchildren.module').then(m => m.ViewchildrenModule)
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'http'
