@@ -13,3 +13,6 @@
 
 ## @ViewChildren
 - 订阅@ViewChildren()的属性中的changes观察者对象后，在组件被销毁时，将自动被取消订阅，不需要手动取消
+
+## @ContentChildren
+- 通过测试可知，订阅changes观察者对象后，在组件被销毁时，将自动被取消订阅，不需要手动取消。

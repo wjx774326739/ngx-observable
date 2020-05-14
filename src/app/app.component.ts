@@ -29,6 +29,10 @@ export class AppComponent {
     {
       name: 'viewchildren',
       url: '/viewchildren'
+    },
+    {
+      name: 'contentchildren',
+      url: '/contentchildren'
     }
   ];
 

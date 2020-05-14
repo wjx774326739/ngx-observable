@@ -41,14 +41,13 @@ export class ViewchildrenComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // setTimeout(() => {
-    console.log(this.viewchildrenChanges$Index);
-    // }, 1000);
-    this.logSer.publishLog(
-      '这是在ViewchildrenComponent中记录的日志。此时组件被销毁，被观察的@ViewChildren的changes观察对象的状态为：closed-'
-      + this.viewchildrenChanges$Index.closed
-    );
-    this.logSer.endLog();
+    setTimeout(() => {
+      this.logSer.publishLog(
+        '这是在ViewchildrenComponent中记录的日志。此时组件被销毁，被观察的@ViewChildren的changes观察对象的状态为：closed-'
+        + this.viewchildrenChanges$Index.closed
+      );
+      this.logSer.endLog();
+    });
   }
 
 }
