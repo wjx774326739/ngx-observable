@@ -39,23 +39,27 @@ export class RouterDemoComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.logSer.publishLog(
-      '这是在RouterDemoComponent中，组件销毁时记录的日志。此时event的观察者对象的状态为：closed-'
-      + this.event$Index.closed
-    );
-    this.logSer.publishLog(
-      '这是在RouterDemoComponent中，组件销毁时记录的日志。此时data的观察者对象的状态为：closed-'
-      + this.data$Index.closed
-    );
-    this.logSer.publishLog(
-      '这是在RouterDemoComponent中，组件销毁时记录的日志。此时paramMap的观察者对象的状态为：closed-'
-      + this.paramMap$Index.closed
-    );
-    this.logSer.publishLog(
-      '这是在RouterDemoComponent中，组件销毁时记录的日志。此时queryParamMap的观察者对象的状态为：closed-'
-      + this.queryParamMap$Index.closed
-    );
-    this.logSer.endLog();
+    // 官方教程里面说会在不需要的时候自动取消activatedRouter的观察者对象的订阅。
+    // 但是组件销毁后并没有自动取消。不知道这所谓的不需要的时候是什么时候
+    setTimeout(() => {
+      this.logSer.publishLog(
+        '这是在RouterDemoComponent中，组件销毁时记录的日志。此时event的观察者对象的状态为：closed-'
+        + this.event$Index.closed
+      );
+      this.logSer.publishLog(
+        '这是在RouterDemoComponent中，组件销毁时记录的日志。此时data的观察者对象的状态为：closed-'
+        + this.data$Index.closed
+      );
+      this.logSer.publishLog(
+        '这是在RouterDemoComponent中，组件销毁时记录的日志。此时paramMap的观察者对象的状态为：closed-'
+        + this.paramMap$Index.closed
+      );
+      this.logSer.publishLog(
+        '这是在RouterDemoComponent中，组件销毁时记录的日志。此时queryParamMap的观察者对象的状态为：closed-'
+        + this.queryParamMap$Index.closed
+      );
+      this.logSer.endLog();
+    }, 1000);
   }
 
 }
