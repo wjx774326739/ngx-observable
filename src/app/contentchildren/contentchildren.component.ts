@@ -48,8 +48,9 @@ export class ContentchildrenComponent implements OnInit, AfterContentInit, OnDes
         '这是在ContentchildrenComponent中记录的日志。此时组件被销毁，被观察的 @ContentChildren的changes观察对象的状态为：closed-'
         + this.contentChildrenChanges$Index.closed
       );
+      console.log(this.contentChildrenChanges$Index);
       this.logSer.endLog();
-    }, 100);
+    }, 1000);
   }
 
 }

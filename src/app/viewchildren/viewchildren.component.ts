@@ -49,7 +49,7 @@ export class ViewchildrenComponent implements OnInit, AfterViewInit, OnDestroy {
         + this.viewchildrenChanges$Index.closed
       );
       this.logSer.endLog();
-    }, 100);
+    }, 1000);
   }
 
 }
